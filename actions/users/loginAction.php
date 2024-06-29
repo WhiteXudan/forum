@@ -31,7 +31,7 @@ if(isset($_POST['validate'])){
             $_SESSION['firstname'] = $UsersInfos['prenom'];
 
             //Rediriger vers la page d'acceuil
-            header('Location : index.php');
+            header('Location: ./index.php');
 
             }else {
                 $errorMsg = "Mot de pass incorrect...";
