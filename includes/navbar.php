@@ -16,6 +16,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="./publishQuestion.php">Publier une question</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./actions/users/logoutAction.php">Deconnexion</a>
+                </li>
             </ul>
         </div>
     </div>
