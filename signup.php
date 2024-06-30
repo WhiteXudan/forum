@@ -5,7 +5,7 @@
 
 <body>
     <br><br>
-    <form class="container" action="" method="post">
+    <form action="" method="post" style="margin:0 30% 0 30%;">
 
         <?php if(isset($errorMsg)){echo '<p>'. $errorMsg .'</p>';} ?>
 
@@ -25,9 +25,13 @@
             <label for="password" class="form-label">Password</label>
             <input type="password" class="form-control" id="password" name="password">
         </div>
+        <div class="mb-3">
+            <label for="profil" class="form-label">Photo de profil</label>
+            <input type="file" class="form-control" id="profil" name="profil">
+        </div>
         <button type="submit" name="validate" class="btn btn-primary">S'inscrire</button>
         <br><br>
-        <p>J'ai déjà un compte.<a href="./login.php">Connexion</a></p>
+        <p>J'ai déjà un compte.<a href="./login.php">Connexion</a> | <a href="./index.php">Home</a></p>
     </form>
 </body>
 

@@ -11,7 +11,7 @@
     <?php include('./includes/navbar.php');?>
 
     <br><br>
-    <form class="container" action="" method="post">
+    <form style="margin:0% 30% 0% 30%" action="" method="post">
 
         <?php
             if(isset($errorMsg)){

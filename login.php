@@ -5,7 +5,7 @@
 
 <body>
     <br><br>
-    <form class="container" action="" method="post">
+    <form style="margin:8% 37% 0 37%;" action="" method="post">
 
         <?php if(isset($errorMsg)){echo '<p>'. $errorMsg .'</p>';} ?>
 
@@ -19,7 +19,7 @@
         </div>
         <button type="submit" name="validate" class="btn btn-primary">Se connecter</button>
         <br><br>
-        <p>Je n'ai pas de compte.<a href="./signup.php">Inscription</a></p>
+        <p>Je n'ai pas de compte.<a href="./signup.php">Inscription</a> | <a href="./index.php">Home</a></p>
     </form>
 </body>
 

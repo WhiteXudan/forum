@@ -22,7 +22,7 @@
         $formattedTime = sprintf("%02dh %02dmin %02ds", $hours, $minutes, $seconds);
         $formattedDate = str_replace("-", "/", $date);
 
-        echo '<div class="card">';
+        echo '<div class="card" style="border-radius:0px !important;">';
             echo '<h5 class="card-header">'.$MyQuestions['date'].' à '.$formattedTime.'</h5>';
             echo '<div class="card-body">';
                 echo '<h5 class="card-title">'.$MyQuestions['sujet'].' :</h5>';

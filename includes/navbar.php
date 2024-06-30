@@ -22,17 +22,22 @@
             </ul>
             <ul class="navbar-nav mb-2 mb-lg-0">
                 <div style="display:flex; align-items:center;">
+
+                    <?php if(isset($_SESSION['auth'])): ?>
                     <div
                         style="width:50px;height:50px; border: 3px solid blue; border-radius:50%; background:green; margin-right:10px; overflow:hidden">
-                        <img src="./assets/PSX_20240418_000057.jpg" alt="" style="width:50px; height:100px;">
+                        <a href="./profile.php?id=<?= $_SESSION['id']; ?>"><img src="./assets/PSX_20240418_000057.jpg"
+                                alt="" style="width:50px; height:100px;"></a>
                     </div>
-                    <?php if(isset($_SESSION['auth'])): ?>
                     <li class="nav-item">
                         <a class="nav-link" href="./actions/users/logoutAction.php">Deconnexion</a>
                     </li>
+                    <?php else:?>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./login.php">Connexion</a>
+                    </li>
                     <?php endif;?>
                 </div>
-
             </ul>
         </div>
     </div>
