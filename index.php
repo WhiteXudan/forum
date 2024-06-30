@@ -31,16 +31,17 @@
         <?php
         if(isset($errorMsg)){
             echo '<h1 style="text-transform: uppercase;">'.$errorMsg.'...</h1>';
-        }else{
-        foreach ($allQuestions as $questions) {
+        } else {
+            foreach ($allQuestions as $questions) {
                 //Formatter le temps (Heure Minutes Secondes)
                 $time = $questions['temps'];
                 $date = $questions['date'];
                 list($hours, $minutes, $seconds) = explode(':', $time);
                 $formattedTime = sprintf("%02dh %02dmin %02ds", $hours, $minutes, $seconds);
                 $formattedDate = str_replace("-", "/", $date);
-                if ($questions['idAuteur'] == $_SESSION['id']) {
-        ?>
+                if (isset($_SESSION['id'])) {
+                    if ($questions['idAuteur'] == $_SESSION['id']) {
+                        ?>
         <div class="row">
             <div class="col-9">
                 <div class="card" style="border-radius:0px !important;">
@@ -49,7 +50,6 @@
                         <a href="./article.php?id=<?= $questions['id']; ?>">
                             <h5 class="card-title"><?= $questions['sujet'] ?></h5>
                         </a>
-
                         <p class="card-text"><?= $questions['question'] ?></p>
                     </div>
                     <h5 class="card-header">Publié par <?= $questions['pseudoAuteur'] ?> le <?= $formattedDate ?> à
@@ -59,7 +59,7 @@
             <div class="col-3"></div>
         </div>
         <br>
-        <?php } else {
+        <?php } else{
         ?>
         <div class="row">
             <div class="col-3"></div>
@@ -70,7 +70,6 @@
                         <a href="./article.php?id=<?= $questions['id']; ?>">
                             <h5 class="card-title"><?= $questions['sujet'] ?></h5>
                         </a>
-
                         <p class="card-text"><?= $questions['question'] ?></p>
                     </div>
                     <h5 class="card-header">Publié par <?= $questions['pseudoAuteur'] ?> le <?= $formattedDate ?> à
@@ -80,11 +79,26 @@
         </div>
         <br>
         <?php }
-            }} ?>
+        } else {
+        ?>
+        <div class="card" style="border-radius:0px !important;">
 
+            <div class="card-body">
+                <a href="./article.php?id=<?= $questions['id']; ?>">
+                    <h5 class="card-title"><?= $questions['sujet'] ?></h5>
+                </a>
+                <p class="card-text"><?= $questions['question'] ?></p>
+            </div>
+            <h5 class="card-header">Publié par <?= $questions['pseudoAuteur'] ?> le <?= $formattedDate ?> à
+                <?= $formattedTime ?></h5>
+        </div>
 
+        <br>
+        <?php }
+            }
+        }?>
     </div>
-
+    </div>
 </body>
 
 </html>
