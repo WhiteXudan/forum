@@ -29,8 +29,8 @@
     <br><br>
     <div class="container">
         <?php
-        if(isset($errorMsg)){
-            echo '<h1 style="text-transform: uppercase;">'.$errorMsg.'...</h1>';
+        if(isset($errMsg)){
+            echo '<h1 style="text-transform: uppercase; text-align:center;">'.$errMsg.'...</h1>';
         } else {
             foreach ($allQuestions as $questions) {
                 //Formatter le temps (Heure Minutes Secondes)

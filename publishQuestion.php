@@ -14,8 +14,8 @@
     <form style="margin:0% 30% 0% 30%" action="" method="post">
 
         <?php
-            if(isset($errorMsg)){
-                echo '<p>'. $errorMsg .'</p>';
+            if(isset($Msg)){
+                echo '<p>'. $Msg .'</p>';
             }elseif(isset($successMsg)){
                 echo '<p>'. $successMsg .'</p>';
             }

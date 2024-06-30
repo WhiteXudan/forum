@@ -6,8 +6,8 @@
     $getAllQuestions->execute();
     $allQuestions = $getAllQuestions->fetchAll();
 
-    if($getAllQuestions->fetchAll() == 0){
-        $errorMsg = "Aucune question publiée";
+    if(empty($allQuestions)){
+        $errMsg = "Aucune question n'a été publiée pour l'instant...";
     }
     
     if(isset($_GET['search']) AND !empty($_GET['search'])){
@@ -18,8 +18,8 @@
         $getAllQuestions->execute(array("%$userSearch%", "%$userSearch%"));
         $allQuestions = $getAllQuestions->fetchAll();
 
-        if($getAllQuestions->fetchAll() == 0){
-            $errorMsg = "No results found...";
+        if(empty($allQuestions)){
+            $errMsg = "No results found...";
         }
     }
 

@@ -25,6 +25,6 @@ if (isset($_POST["publier"])) {
         $successMsg = "Publiée!";
 
     }else {
-        $errorMsg = "Veuillez remplir tous les champs!";
+        $Msg = "Veuillez remplir tous les champs!";
     }
 }

@@ -5,7 +5,7 @@
 
 <body>
     <br><br>
-    <form action="" method="post" style="margin:0 30% 0 30%;">
+    <form action="" method="post" enctype="multipart/form-data" style="margin:0 30% 0 30%;">
 
         <?php if(isset($errorMsg)){echo '<p>'. $errorMsg .'</p>';} ?>
 

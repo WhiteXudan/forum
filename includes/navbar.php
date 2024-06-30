@@ -23,11 +23,37 @@
             <ul class="navbar-nav mb-2 mb-lg-0">
                 <div style="display:flex; align-items:center;">
 
-                    <?php if(isset($_SESSION['auth'])): ?>
+                    <?php if(isset($_SESSION['auth'])):
+                        require ("./actions/database.php");
+
+                        if(isset($_GET['id']) && !empty($_GET['id'])){
+
+                            $idOfUser = $_GET['id'];
+
+                            $checkIfUserExists = $connexion->prepare("SELECT pseudo, profil FROM users WHERE id = ?");
+                            $checkIfUserExists->execute(array($idOfUser));
+
+                            if($checkIfUserExists->rowCount() > 0){
+
+                                $userInfos = $checkIfUserExists->fetch();
+                                $userPseudo = $userInfos['pseudo'];
+                                $userProfil = base64_encode($userInfos['profil']);
+
+                            }else{
+                                $profil = substr($userPseudo, 0, 1);
+                            }
+                        }
+                        ?>
                     <div
-                        style="width:50px;height:50px; border: 3px solid blue; border-radius:50%; background:green; margin-right:10px; overflow:hidden">
-                        <a href="./profile.php?id=<?= $_SESSION['id']; ?>"><img src="./assets/PSX_20240418_000057.jpg"
-                                alt="" style="width:50px; height:100px;"></a>
+                        style="width:50px;height:50px; border: 2px solid blue; border-radius:50%; background:green; margin-right:10px; overflow:hidden">
+                        <a href="./profile.php?id=<?= $_SESSION['id']; ?>">
+                            <?php if(!empty($userProfil)){
+                                echo '<img src="data:image/jpeg;base64,'.$userProfil.'" alt="" style="width:50px; height:100px;">';
+                            } else {
+                                echo '<p style="text-align:center; text-transform:uppercase; color:white;">' . $profil . '</p>';
+                            }
+                            ?>
+                        </a>
                     </div>
                     <li class="nav-item">
                         <a class="nav-link" href="./actions/users/logoutAction.php">Deconnexion</a>
