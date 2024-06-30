@@ -5,20 +5,34 @@
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link" href="./index.php">Questionnaires</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="./myQuestions.php">Mes Questions</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="./publishQuestion.php">Publier une question</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="./actions/users/logoutAction.php">Deconnexion</a>
-                </li>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent"
+            style="display:flex; justify-content:space-between !important;">
+            <ul class="navbar-nav mb-2 mb-lg-0">
+                <div style="display: flex;">
+                    <li class="nav-item">
+                        <a class="nav-link" href="./index.php">Questionnaires</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./myQuestions.php">Mes Questions</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./publishQuestion.php">Publier une question</a>
+                    </li>
+                </div>
+            </ul>
+            <ul class="navbar-nav mb-2 mb-lg-0">
+                <div style="display:flex; align-items:center;">
+                    <div
+                        style="width:50px;height:50px; border: 3px solid blue; border-radius:50%; background:green; margin-right:10px; overflow:hidden">
+                        <img src="./assets/PSX_20240418_000057.jpg" alt="" style="width:50px; height:100px;">
+                    </div>
+                    <?php if(isset($_SESSION['auth'])): ?>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./actions/users/logoutAction.php">Deconnexion</a>
+                    </li>
+                    <?php endif;?>
+                </div>
+
             </ul>
         </div>
     </div>
