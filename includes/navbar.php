@@ -44,6 +44,7 @@
                             }
                         }
                         ?>
+                    <!--
                     <div
                         style="width:50px;height:50px; border: 2px solid blue; border-radius:50%; background:green; margin-right:10px; overflow:hidden">
                         <a href="./profile.php?id=<?= $_SESSION['id']; ?>">
@@ -55,6 +56,7 @@
                             ?>
                         </a>
                     </div>
+                        -->
                     <li class="nav-item">
                         <a class="nav-link" href="./actions/users/logoutAction.php">Deconnexion</a>
                     </li>
