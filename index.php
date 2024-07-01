@@ -1,7 +1,4 @@
-<?php 
-    session_start();
-    require ("./actions/questions/showQestionsAction.php");
-?>
+<?php session_start(); require ("./actions/questions/showQestionsAction.php"); ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -52,8 +49,11 @@
                         </a>
                         <p class="card-text"><?= $questions['question'] ?></p>
                     </div>
-                    <h5 class="card-header">Publié par <?= $questions['pseudoAuteur'] ?> le <?= $formattedDate ?> à
-                        <?= $formattedTime ?></h5>
+                    <h5 class="card-header">Publié par <span
+                            style="color:blueviolet;font-weight:500;">@<?= $questions['pseudoAuteur'] ?></span> le
+                        <span style="color:#00a0df;"><?= $formattedDate ?></span> à
+                        <span style="color:#00a0df;"><?= $formattedTime ?></span>
+                    </h5>
                 </div>
             </div>
             <div class="col-3"></div>
@@ -72,8 +72,11 @@
                         </a>
                         <p class="card-text"><?= $questions['question'] ?></p>
                     </div>
-                    <h5 class="card-header">Publié par <?= $questions['pseudoAuteur'] ?> le <?= $formattedDate ?> à
-                        <?= $formattedTime ?></h5>
+                    <h5 class="card-header">Publié par <span
+                            style="color:blueviolet;font-weight:500;">@<?= $questions['pseudoAuteur'] ?></span> le
+                        <span style="color:#00a0df;"><?= $formattedDate ?></span> à
+                        <span style="color:#00a0df;"><?= $formattedTime ?></span>
+                    </h5>
                 </div>
             </div>
         </div>
@@ -89,8 +92,11 @@
                 </a>
                 <p class="card-text"><?= $questions['question'] ?></p>
             </div>
-            <h5 class="card-header">Publié par <?= $questions['pseudoAuteur'] ?> le <?= $formattedDate ?> à
-                <?= $formattedTime ?></h5>
+            <h5 class="card-header">Publié par <span
+                    style="color:blueviolet;font-weight:500;">@<?= $questions['pseudoAuteur'] ?></span> le
+                <span style="color:#00a0df;"><?= $formattedDate ?></span> à
+                <span style="color:#00a0df;"><?= $formattedTime ?></span>
+            </h5>
         </div>
 
         <br>

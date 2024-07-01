@@ -15,9 +15,9 @@
 
         <?php
             if(isset($Msg)){
-                echo '<p>'. $Msg .'</p>';
+                echo '<p style="text-align:center; color:red;">'. $Msg .'</p>';
             }elseif(isset($successMsg)){
-                echo '<p>'. $successMsg .'</p>';
+                echo '<p style="text-align:center; color:green;">'. $successMsg .'</p>';
             }
         ?>
 

@@ -48,9 +48,11 @@
                         list($hours, $minutes, $seconds) = explode(':', $answerTime);
                         $formattedAnswerTime = sprintf("%02dh %02dmin %02ds", $hours, $minutes, $seconds);
                     ?>
-                    <h3><?= 'Réponse de : ' . $allAnswers['pseudoAuteur'] ?></h3>
+                    <h3><span><?= 'Réponse de : <span style="color:blueviolet;">@' . $allAnswers['pseudoAuteur'] ?></span>
+                    </h3>
                     <p><?= $allAnswers['reponse']; ?></p>
-                    <small><?= $formattedAnswerDate . ' à ' . $formattedAnswerTime; ?></small>
+                    <small><span
+                            style="color:#00a0df;font-weight:600;"><?= $formattedAnswerDate . '</span> à <span style="color:#00a0df;font-weight:600;">' . $formattedAnswerTime; ?></span></small>
                     <hr>
                     <?php } ?>
                 </div>

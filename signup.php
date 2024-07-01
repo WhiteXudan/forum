@@ -4,10 +4,10 @@
 <?php include("includes/head.php"); ?>
 
 <body>
-    <br><br>
+    <br>
     <form action="" method="post" enctype="multipart/form-data" style="margin:0 30% 0 30%;">
 
-        <?php if(isset($errorMsg)){echo '<p>'. $errorMsg .'</p>';} ?>
+        <?php if(isset($errorMsg)){echo '<p style="text-align:center; color:red;">'. $errorMsg .'</p>';} ?>
 
         <div class="mb-3">
             <label for="pseudo" class="form-label">Pseudo</label>

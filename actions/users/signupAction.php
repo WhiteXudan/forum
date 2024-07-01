@@ -47,6 +47,6 @@ if(isset($_POST['validate'])){
             $errorMsg = "Ce pseudo est déjà utilisé!";
         }
     } else{
-        $errorMsg = "Veuillez remplir tous les champs!";
+        $errorMsg = "Veuillez remplir tous les champs!<br>Il se peut que Votre Photo de profil soit trop volumineux...";
     }
 }

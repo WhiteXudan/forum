@@ -7,7 +7,7 @@
     $allQuestions = $getAllQuestions->fetchAll();
 
     if(empty($allQuestions)){
-        $errMsg = "Aucune question n'a été publiée pour l'instant...";
+        $errMsg = "Aucune question publiée pour l'instant...";
     }
     
     if(isset($_GET['search']) AND !empty($_GET['search'])){

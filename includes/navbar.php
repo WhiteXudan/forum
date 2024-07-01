@@ -25,6 +25,7 @@
 
                     <?php if(isset($_SESSION['auth'])):
                         require ("./actions/database.php");
+                        $_GET['id'] =  $_SESSION['id'];
 
                         if(isset($_GET['id']) && !empty($_GET['id'])){
 
@@ -40,23 +41,23 @@
                                 $userProfil = base64_encode($userInfos['profil']);
 
                             }else{
-                                $profil = substr($userPseudo, 0, 1);
+                                $profil = substr($_SESSION['pseudo'], 0, 1);
                             }
                         }
                         ?>
-                    <!--
-                    <div
-                        style="width:50px;height:50px; border: 2px solid blue; border-radius:50%; background:green; margin-right:10px; overflow:hidden">
-                        <a href="./profile.php?id=<?= $_SESSION['id']; ?>">
+                    <a href="./profile.php?id=<?= $_SESSION['id']; ?>">
+                        <div
+                            style="width:50px;height:50px; border: 2px solid blue; border-radius:50%; background:white; margin-right:10px; overflow:hidden">
+
                             <?php if(!empty($userProfil)){
-                                echo '<img src="data:image/jpeg;base64,'.$userProfil.'" alt="" style="width:50px; height:100px;">';
+                                echo '<img src="data:image/jpeg;base64,'.$userProfil.'" alt="" style="width:50px; height:50px;">';
                             } else {
-                                echo '<p style="text-align:center; text-transform:uppercase; color:white;">' . $profil . '</p>';
+                                echo '<p style="text-align:center; text-transform:uppercase; color:white; margin-bottom:4px !important; font-size:30px; font-weight:800;">' . $profil . '</p>';
                             }
                             ?>
-                        </a>
-                    </div>
-                        -->
+
+                        </div>
+                    </a>
                     <li class="nav-item">
                         <a class="nav-link" href="./actions/users/logoutAction.php">Deconnexion</a>
                     </li>

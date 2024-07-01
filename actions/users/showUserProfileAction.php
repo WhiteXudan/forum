@@ -15,11 +15,14 @@ if(isset($_GET['id']) && !empty($_GET['id'])){
         $userPseudo = $userInfos["pseudo"];
         $userLastname = $userInfos["nom"];
         $userFirstname = $userInfos["prenom"];
-        $userProfil = base64_encode($userInfos['profil']);
-
+        if (!empty($userInfos['profil'])) {
+            $userProfil = base64_encode($userInfos['profil']);
+        }else{
+            $profil = substr($_SESSION['pseudo'], 0, 1);
+        }
     }else{
         $errorMsg = "User Not Found...";
     }
 }else{
-    $errorMsg = "User Not Found...";
+    $errorMsg = "User Not Identified...";
 }
