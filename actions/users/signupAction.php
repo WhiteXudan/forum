@@ -35,7 +35,7 @@ if(isset($_POST['validate'])){
             $insertUser = $connexion->prepare('INSERT INTO users (pseudo, nom, prenom, mdp, profil) VALUES(?, ?, ?, ?, ?)');
 
             //Recupérer les informations de l'User
-            $getInfosOfThisUser = $connexion->prepare('SELECT id, pseudo, nom,, prenom FROM users WHERE pseudo = ? AND nom = ? AND prenom = ?');
+            $getInfosOfThisUser = $connexion->prepare('SELECT id, pseudo, nom, prenom FROM users WHERE pseudo = ? AND nom = ? AND prenom = ?');
             $getInfosOfThisUser->execute(array($user_pseudo, $user_lastname, $user_firstname));
 
             //Rediriger l'utilisateur vers la page d'accueil
